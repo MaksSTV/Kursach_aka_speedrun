@@ -1,25 +1,28 @@
+#pragma once
 #ifndef Types
 #define Types
-#pragma once
-#include <iostream>
-#include <fstream>
-using namespace std;
 
-struct Poli {
-	form_monom mon;
-	Poli *next;
+struct mono
+{
+	float a;
+	int p;
+	mono* next;
 };
-struct Form_poli {
-	Poli *head, *cur, *last;
+
+struct form_mono_list
+{
+	mono* head, * cur, * last;
+};
+
+struct poly
+{
+	form_mono_list mon;
+	poly* next;
+};
+
+struct form_poly_list
+{
+	poly* head, * cur, * last;
 	char mark = '@';
 };
-struct monom {
-	float a;
-	float p;
-	monom *next;
-};
-struct form_monom {
-	monom *head, *cur, *last;
-};
-
 #endif // !Types
